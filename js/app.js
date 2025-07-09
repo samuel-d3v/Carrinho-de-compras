@@ -3,12 +3,15 @@ limpar()
 
 function adicionar() {
   const produto = document.getElementById('produto').value.split(' - ');
-  const qtdSelecionada = parseInt(document.getElementById('quantidade').value);
-  
-  novaSecao(qtdSelecionada, produto[0], produto[1]);
+  const qtdSelecionada = document.getElementById('quantidade');
+  const quantidade = parseInt(qtdSelecionada.value);
+
+  novaSecao(quantidade, produto[0], produto[1]);
   
   const total = document.getElementById('valor-total');
-  total.textContent = calculaTotal(qtdSelecionada, produto[1]);
+  total.textContent = calculaTotal(quantidade, produto[1]);
+
+  qtdSelecionada.value = "";
 }
 
 function novaSecao(quantidade, item, valor){
