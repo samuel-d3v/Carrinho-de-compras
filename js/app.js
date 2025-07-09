@@ -1,4 +1,5 @@
 let listaItens = document.getElementById('lista-produtos');
+limpar()
 
 function adicionar() {
   const produto = document.getElementById('produto').value.split(' - ');
