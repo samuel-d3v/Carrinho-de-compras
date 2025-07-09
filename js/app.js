@@ -6,9 +6,13 @@ function adicionar() {
   const qtdSelecionada = document.getElementById('quantidade');
   const quantidade = parseInt(qtdSelecionada.value);
 
+  if(!quantidade) {    
+    return alert("Informa a quantidade que deseja adicionar ao carrinho.")
+  }
+
   novaSecao(quantidade, produto[0], produto[1]);
   
-  const total = document.getElementById('valor-total');
+  const total = document.getElementById('valor-tota l');
   total.textContent = calculaTotal(quantidade, produto[1]);
 
   qtdSelecionada.value = "";
